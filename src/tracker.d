@@ -19,14 +19,32 @@ void main() {
 		}
 		else
 		{
+			writeln("Invalid Input. Returning to Menu.");
 			menuChoice = 0;
 		}
-		
+
 		if (menuChoice == 1)
 		{
+			string playerCountUn;
 			int playerCount = 0;
-			writeln("\nPlayer Count: ");
-			readf(" %s\n", &playerCount);
+			do
+			{
+				writeln("\nPlayer Count: ");
+				playerCountUn = chomp(readln());
+
+				playerCountUn = replaceAll(playerCountUn, regex("[a-zA-Z]"), "");
+
+				if (playerCountUn != "")
+				{
+					playerCount = to!int(playerCountUn);
+				}
+				else
+				{
+					writeln("\nInvalid Input. Please Try Again.");
+					playerCount = 0;
+				}
+			}
+			while(playerCount <= 0);
 
 			string[] players;
 			players.length = playerCount;
@@ -39,9 +57,26 @@ void main() {
 
 			int innerMenu;
 			do {
-				writeln("\nEnemy Count: ");
+
 				int enemyCount;
-				readf(" %s\n", &enemyCount);
+				string enemyCountUn;
+
+				do {
+					writeln("\nEnemy Count: ");
+					enemyCountUn = chomp(readln());
+					enemyCountUn = replaceAll(enemyCountUn, regex("[a-zA-Z]"), "");
+
+					if (enemyCountUn != "")
+					{
+						enemyCount = to!int(enemyCountUn);
+					}
+					else
+					{
+						writeln("\nInvalid Input. Please Try Again.");
+						enemyCount = 0;
+					}
+				}
+				while(enemyCount <= 0);
 
 				string[] enemies;
 				int[] enemyHP;
@@ -52,8 +87,25 @@ void main() {
 				{
 					writeln("\nEnemy ", i+1, " name: ");
 					enemies[i] = chomp(readln());
-					writeln("\n", enemies[i], "'s health: ");
-					readf(" %s\n", &enemyHP[i]);
+
+					string healthUn;
+					do {
+						writeln("\n", enemies[i], "'s health: ");
+						healthUn = chomp(readln());
+						healthUn = replaceAll(healthUn, regex("[a-zA-Z]"), "");
+
+						if (healthUn != "")
+						{
+							enemyHP[i] = to!int(healthUn);
+						}
+
+						else
+						{
+							writeln("\nInvalid Input. Please Try Again.");
+							enemyHP[i] = 0;
+						}
+					}
+					while(enemyHP[i] <= 0);
 				}
 
 				//healing target
@@ -90,9 +142,25 @@ void main() {
 					}
 					while (retryTarget == true);
 
-					writeln("\nDamage: ");
+					string damageUn;
 					int damage;
-					readf(" %s\n", &damage);
+
+					do {
+						writeln("\nDamage: ");
+						damageUn = chomp(readln());
+						damageUn = replaceAll(damageUn, regex("[a-zA-Z]"), "");
+
+						if (damageUn != "")
+						{
+							damage = to!int(damageUn);
+						}
+						else 
+						{
+							writeln("\nInvalid Input. Please Try Again.");
+							damage = 0;
+						}
+					}
+					while (damage <= 0);
 					
 					bool retryAttacker = true;
 					do {
@@ -146,8 +214,23 @@ void main() {
 				writeln("~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
 				do {
-					writeln("\n~Options~\n 1 - Start New Battle with Same Players\n 2 - Main Menu\n\nEnter Choice: ");
-					readf(" %s\n", &innerMenu);
+					string innerMenuUn;
+					do {
+						writeln("\n~Options~\n 1 - Start New Battle with Same Players\n 2 - Main Menu\n\nEnter Choice: ");
+						innerMenuUn = chomp(readln());
+						innerMenuUn = replaceAll(innerMenuUn, regex("[a-zA-Z]"), "");
+
+						if (innerMenuUn != "")
+						{
+							innerMenu = to!int(innerMenuUn);
+						}
+						else
+						{
+							writeln("\nInvalid Input. Please Try Again.");
+							innerMenu = 0;
+						}
+					}
+					while(innerMenu <= 0);
 				}
 				while (innerMenu != 1 && innerMenu != 2);
 			}
