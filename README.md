@@ -1,7 +1,5 @@
 #HP Tracker
-##by Matt Johnson
-
-#**NOTE: Entering in non-numerical characters for numeric entries will cause a crash!**
+	by Matt Johnson
 
 ##Healing
 
