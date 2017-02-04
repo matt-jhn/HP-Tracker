@@ -1,13 +1,27 @@
 import std.stdio;
 import std.string;
+import std.regex;
+import std.conv;
 
 void main() {
 	while (true) {
-		
+
+
 		writeln("\n~Welcome to the HP Tracker by Matt Johnson~\n\n 1 - Start Battle\n 2 - Exit\n\nEnter choice: ");
 		int menuChoice;
-		readf(" %s", &menuChoice);
+		string menuChoiceUn;
+		menuChoiceUn = chomp(readln());
+		menuChoiceUn = replaceAll(menuChoiceUn, regex("[a-zA-Z]"), "");
 
+		if (menuChoiceUn != "")
+		{
+			menuChoice = to!int(menuChoiceUn);
+		}
+		else
+		{
+			menuChoice = 0;
+		}
+		
 		if (menuChoice == 1)
 		{
 			int playerCount = 0;
