@@ -131,7 +131,7 @@ void main() {
 						writeln("Target: ");
 						string target = chomp(readln());
 
-						for (int i = 0; i < enemyCount; i++)
+						for (int i = 0; i < enemyCount + 1; i++)
 						{
 							if (target == enemies[i])
 							{
