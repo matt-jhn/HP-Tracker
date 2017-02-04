@@ -5,7 +5,8 @@
 
 ##Healing
 
-	When a player is healing, designate "heal" as the target. This will let healing points to be tracked equivalent to damage points.
+	When a player is healing, designate "heal" as the target. This will let healing points to be tracked equivalent
+	to damage points.
 
 ##Inputs
 	
@@ -15,4 +16,5 @@
 
 ##Calculations
 	
-	If player does more damage than the target has hit points, the player will only receive the remaining hit points of the enemy as damage points.
+	If player does more damage than the target has hit points, the player will only receive the remaining hit points
+	of the enemy as damage points.
