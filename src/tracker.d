@@ -11,7 +11,7 @@ void main() {
 		int menuChoice;
 		string menuChoiceUn;
 		menuChoiceUn = chomp(readln());
-		menuChoiceUn = replaceAll(menuChoiceUn, regex("[a-zA-Z]"), "");
+		menuChoiceUn = replaceAll(menuChoiceUn, regex([`\D`]), "");
 
 		if (menuChoiceUn != "")
 		{
@@ -32,7 +32,7 @@ void main() {
 				writeln("\nPlayer Count: ");
 				playerCountUn = chomp(readln());
 
-				playerCountUn = replaceAll(playerCountUn, regex("[a-zA-Z]"), "");
+				playerCountUn = replaceAll(playerCountUn, regex([`\D`]), "");
 
 				if (playerCountUn != "")
 				{
@@ -64,7 +64,7 @@ void main() {
 				do {
 					writeln("\nEnemy Count: ");
 					enemyCountUn = chomp(readln());
-					enemyCountUn = replaceAll(enemyCountUn, regex("[a-zA-Z]"), "");
+					enemyCountUn = replaceAll(enemyCountUn, regex([`\D`]), "");
 
 					if (enemyCountUn != "")
 					{
@@ -92,7 +92,7 @@ void main() {
 					do {
 						writeln("\n", enemies[i], "'s health: ");
 						healthUn = chomp(readln());
-						healthUn = replaceAll(healthUn, regex("[a-zA-Z]"), "");
+						healthUn = replaceAll(healthUn, regex([`\D`]), "");
 
 						if (healthUn != "")
 						{
@@ -148,7 +148,7 @@ void main() {
 					do {
 						writeln("\nDamage: ");
 						damageUn = chomp(readln());
-						damageUn = replaceAll(damageUn, regex("[a-zA-Z]"), "");
+						damageUn = replaceAll(damageUn, regex([`\D`]), "");
 
 						if (damageUn != "")
 						{
@@ -218,7 +218,7 @@ void main() {
 					do {
 						writeln("\n~Options~\n 1 - Start New Battle with Same Players\n 2 - Main Menu\n\nEnter Choice: ");
 						innerMenuUn = chomp(readln());
-						innerMenuUn = replaceAll(innerMenuUn, regex("[a-zA-Z]"), "");
+						innerMenuUn = replaceAll(innerMenuUn, regex([`\D`]), "");
 
 						if (innerMenuUn != "")
 						{
